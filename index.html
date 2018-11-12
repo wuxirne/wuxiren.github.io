@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style type="text/css">
-        h1{
-            text-align: center;
-            font-size: 50px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Hello Github</h1>   
-</body>
-</html>
+---
+layout: home
+---
+<div class="home">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.title }}
+            <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div>
+          </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
